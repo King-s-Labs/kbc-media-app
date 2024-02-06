@@ -17,7 +17,7 @@ ReactNativePaper (An app that lets you see the different components for the comp
 Once you clone the project from github, run these commands
 
 ```bash
-  cd KBC_Media_App # make sure you are in the second directory called this
+  cd KBC_Media_App # make sure you are in the second directory (if there are two with same name)
   npm install
   npx expo start
 ```

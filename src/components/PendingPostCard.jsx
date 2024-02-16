@@ -3,21 +3,10 @@ import { StyleSheet, View } from 'react-native';
 import { Card, Text } from 'react-native-paper';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import formatDate from '../utils/formatDate';
+import capitaliseFirstLetter from '../utils/capitaliseFirstLetter';
+import PostTypeIcon from './PostTypeIcon';
 
-
-const PostTypeIcon = ({ post_type }) => {
-    if (!post_type) {
-        return null
-    }
-
-    return (
-        <Icon name={post_type}
-            size={50}
-            color="black" />
-    );
-};
-
-const PendingPostCard = ({ name, post_time, time_sent_at, due_date, approval, needs_approval, assigned_to, post_type }) => {
+const PendingPostCard = ({ name, post_time, time_sent_at, due_date, approved, needs_approval, assigned_to, post_type }) => {
 
     return (
         <Card mode="outlined"
@@ -26,8 +15,8 @@ const PendingPostCard = ({ name, post_time, time_sent_at, due_date, approval, ne
                 <View style={styles.content}>
                     <View style={styles.textContainer}>
                         <Text style={styles.titleStyle} variant="titleLarge">{name}</Text>
-                        <Text variant="bodyLarge">{formatDate(post_time)}</Text>
-                        <Text variant="bodyLarge">{approval ? "Approved" : "Pending approval"}</Text>
+                        <Text variant="bodyLarge">{capitaliseFirstLetter(formatDate(post_time))}</Text>
+                        <Text variant="bodyLarge">{approved ? "Approved" : "Pending approval"}</Text>
                         <Text style={styles.mutedText} variant="bodyLarge">{
                         assigned_to ? 
                         `Assigned to ${assigned_to}` 

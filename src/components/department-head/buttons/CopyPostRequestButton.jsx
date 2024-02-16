@@ -1,20 +1,20 @@
 import * as React from 'react';
 import { StyleSheet, View, Text } from 'react-native';
 import { Button } from 'react-native-paper';
-import { COLOURS } from '../../constants';
+import { COLOURS } from '../../../constants';
 import Icon from 'react-native-vector-icons/Ionicons';
 
 
-const CreatePostRequestButton = () => (
+const CopyPostRequestButton = () => (
     <Button mode="contained-tonal"
         style={styles.buttonStyle}
         labelStyle={styles.labelStyle}
         onPress={() => console.log('Pressed')}>
         <View style={styles.buttonContentStyle}>
-            <Icon name="add-circle-outline"
+            <Icon name="copy-outline"
                 size={20}
                 color={COLOURS.SECONDARY_COLOUR} />
-            <Text>Create a post request</Text>
+            <Text>Copy a previous post request</Text>
         </View>
     </Button>
 );
@@ -42,4 +42,4 @@ const styles = StyleSheet.create({
 
 });
 
-export default CreatePostRequestButton;
+export default CopyPostRequestButton;

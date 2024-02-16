@@ -1,10 +1,8 @@
 import { View } from 'react-native';
 import AppBar from '../components/AppBar';
-import CreatePostRequestButton from '../components/buttons/CreatePostRequestButton';
-import CopyPostRequestButton from '../components/buttons/CopyPostRequestButton';
-import PendingApprovalComponent from '../components/PendingApprovalComponent';
 import ScrollableScreen from '../components/ScrollableScreen';
-import RequestsInProgressComponent from '../components/department-head/RequestsInProgressComponent';
+import DepartmentHeadComponent from '../components/department-head/DepartmentHeadComponent';
+import HeadOfMediaComponent from '../components/head-of-media/HeadOfMediaComponent';
 
 
 const posts = [
@@ -16,7 +14,7 @@ const posts = [
         "due_date": new Date("2024-03-31T17:30:00"),
         "approved": false,
         "needs_approval": true,
-        "assigned_to": "Associate 1",
+        "assigned_to": "Associate1",
         "post_type": "instagram"
     },
     {
@@ -47,15 +45,19 @@ const posts = [
         "post_time": null,
         "time_sent_at": new Date("2024-02-14T17:30:00"),
         "due_date": new Date("2024-03-15T17:30:00"),
-        "approval": false,
+        "approved": false,
         "needs_approval": false,
         "assigned_to": null,
         "post_type": "linkedin"
     },
 ]
 
-const isDepartmentHead = true;
+const isDepartmentHead = false;
 const department = "talent";
+
+const isHeadOfMedia = true;
+
+const associateName = "associate1"
 
 export default function DashboardScreen() {
     return (
@@ -63,13 +65,11 @@ export default function DashboardScreen() {
             <View>
                 <AppBar title="Dashboard" />
                 {isDepartmentHead ?
-                    <>
-                        <CreatePostRequestButton />
-                        <CopyPostRequestButton />
-                        <PendingApprovalComponent props={posts.filter(post => post.needs_approval)} />
-                        <RequestsInProgressComponent props={posts.filter(post => post.department.toLowerCase() === department)} />
-                    </>
-                    : null}
+                    <DepartmentHeadComponent posts={posts.filter(post => post.department.toLowerCase() === department)} />
+                    : isHeadOfMedia ?
+                        <HeadOfMediaComponent posts={posts} />
+                        : <MediaAssociateComponent posts={posts.filter(post => post.assigned_to.toLowerCase() === associateName)} />
+                }
             </View>
         </ScrollableScreen>
     );

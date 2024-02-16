@@ -1,15 +1,14 @@
 import * as React from 'react';
 import { StyleSheet, View } from 'react-native';
 import { Text } from 'react-native-paper';
-import PendingPostCard from './PendingPostCard';
+import IncomingRequestCard from './IncomingRequestCard';
 
-
-const PendingApprovalComponent = ({ props }) => {
+const IncomingRequestsComponent = ({ props }) => {
     return (
         <View>
-            <Text style={styles.textStyle} variant="titleLarge">Pending approvals ({props.length})</Text>
+            <Text style={styles.textStyle} variant="titleLarge">Requests in Progress ({props.length})</Text>
             {props.map((post, index) => (
-                <PendingPostCard key={index} {...post} />
+                <IncomingRequestCard key={index} {...post} />
             ))}
         </View>
     )
@@ -24,4 +23,4 @@ const styles = StyleSheet.create({
 
 })
 
-export default PendingApprovalComponent;
+export default IncomingRequestsComponent;

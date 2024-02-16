@@ -3,11 +3,11 @@ import { StyleSheet, View } from 'react-native';
 import { Text } from 'react-native-paper';
 import CurrentPostRequestCard from './CurrentPostRequestCard';
 
-const RequestsInProgressComponent = ({ props }) => {
+const RequestsInProgressComponent = ({ posts }) => {
     return (
         <View>
-            <Text style={styles.textStyle} variant="titleLarge">Requests in Progress ({props.length})</Text>
-            {props.map((post, index) => (
+            <Text style={styles.textStyle} variant="titleLarge">Requests in Progress ({posts.length})</Text>
+            {posts.map((post, index) => (
                 <CurrentPostRequestCard key={index} {...post} />
             ))}
         </View>

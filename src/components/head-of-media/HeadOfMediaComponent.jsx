@@ -5,10 +5,10 @@ import IncomingRequestsComponent from "./IncomingRequestsComponent";
 const HeadOfMediaComponent = ({ posts }) => {
     return (
         <>
-            <PendingApprovalComponent props={
+            <PendingApprovalComponent posts={
                 posts.filter(post => post.needs_approval)
             } />
-            <IncomingRequestsComponent props={
+            <IncomingRequestsComponent posts={
                 posts.filter(post => !post.approved)
             } />
         </>

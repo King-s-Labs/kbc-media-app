@@ -1,14 +1,14 @@
 import * as React from 'react';
 import { StyleSheet, View } from 'react-native';
 import { Text } from 'react-native-paper';
-import IncomingRequestCard from './IncomingRequestCard';
+import AssignedPostCard from './AssignedPostCard';
 
-const IncomingRequestsComponent = ({ posts }) => {
+const AssignedPostsComponent = ({ posts }) => {
     return (
         <View>
-            <Text style={styles.textStyle} variant="titleLarge">Incoming Requests ({posts.length})</Text>
+            <Text style={styles.textStyle} variant="titleLarge">Current assignments ({posts.length})</Text>
             {posts.map((post, index) => (
-                <IncomingRequestCard key={index} {...post} />
+                <AssignedPostCard key={index} {...post} />
             ))}
         </View>
     )
@@ -23,4 +23,4 @@ const styles = StyleSheet.create({
 
 })
 
-export default IncomingRequestsComponent;
+export default AssignedPostsComponent;

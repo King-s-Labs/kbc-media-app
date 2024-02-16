@@ -1,7 +1,6 @@
 import * as React from 'react';
 import { StyleSheet, View } from 'react-native';
 import { Card, Text } from 'react-native-paper';
-import Icon from 'react-native-vector-icons/FontAwesome';
 import formatDate from '../../utils/formatDate';;
 import PostTypeIcon from '../PostTypeIcon';
 

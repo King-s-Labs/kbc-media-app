@@ -9,10 +9,10 @@ const DepartmentHeadComponent = ({ posts }) => {
         <>
             <CreatePostRequestButton />
             <CopyPostRequestButton />
-            <PendingApprovalComponent props={
+            <PendingApprovalComponent posts={
                 posts.filter(post => post.needs_approval)
             } />
-            <RequestsInProgressComponent props={
+            <RequestsInProgressComponent posts={
                 posts.filter(post => !post.approved)
             } />
         </>

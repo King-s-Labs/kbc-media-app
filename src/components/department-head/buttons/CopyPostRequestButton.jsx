@@ -13,7 +13,8 @@ const CopyPostRequestButton = () => (
         <View style={styles.buttonContentStyle}>
             <Icon name="copy-outline"
                 size={20}
-                color={COLOURS.SECONDARY_COLOUR} />
+                color={COLOURS.SECONDARY_COLOUR} 
+                />
             <Text>Copy a previous post request</Text>
         </View>
     </Button>

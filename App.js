@@ -12,7 +12,11 @@ const Stack = createNativeStackNavigator();
 export default function App() {
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName="Dashboard">
+      <Stack.Navigator screenOptions={{
+                        contentStyle: {
+                          backgroundColor: COLOURS.BACKGROUND_COLOUR,
+                        }
+                      }} initialRouteName="Dashboard">
         <Stack.Screen
           name="Dashboard"
           component={DashboardScreen}

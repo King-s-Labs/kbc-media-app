@@ -3,7 +3,7 @@ import AppBar from '../components/AppBar';
 import ScrollableScreen from '../components/ScrollableScreen';
 import DepartmentHeadComponent from '../components/department-head/DepartmentHeadComponent';
 import HeadOfMediaComponent from '../components/head-of-media/HeadOfMediaComponent';
-
+import MediaAssociateComponent from '../components/media-associate/MediaAssociateComponent';
 
 const posts = [
     {
@@ -55,7 +55,7 @@ const posts = [
 const isDepartmentHead = false;
 const department = "talent";
 
-const isHeadOfMedia = true;
+const isHeadOfMedia = false;
 
 const associateName = "associate1"
 
@@ -65,10 +65,14 @@ export default function DashboardScreen() {
             <View>
                 <AppBar title="Dashboard" />
                 {isDepartmentHead ?
-                    <DepartmentHeadComponent posts={posts.filter(post => post.department.toLowerCase() === department)} />
+                    <DepartmentHeadComponent posts={
+                        posts.filter(post => post.department.toLowerCase() === department)
+                    } />
                     : isHeadOfMedia ?
                         <HeadOfMediaComponent posts={posts} />
-                        : <MediaAssociateComponent posts={posts.filter(post => post.assigned_to.toLowerCase() === associateName)} />
+                        : <MediaAssociateComponent posts={
+                            posts.filter(post => post.assigned_to && post.assigned_to.toLowerCase() === associateName)
+                        } />
                 }
             </View>
         </ScrollableScreen>

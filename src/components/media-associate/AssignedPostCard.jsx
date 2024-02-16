@@ -1,10 +1,11 @@
 import * as React from 'react';
 import { StyleSheet, View } from 'react-native';
 import { Card, Text } from 'react-native-paper';
-import formatDate from '../utils/formatDate';
-import PostTypeIcon from './PostTypeIcon';
+import formatDate from '../../utils/formatDate';
+import PostTypeIcon from '../PostTypeIcon';
 
-const PendingPostCard = ({ name, department, post_time, time_sent_at, due_date, approved, needs_approval, assigned_to, post_type }) => {
+
+const AssignedPostCard = ({ name, department, post_time, time_sent_at, due_date, approved, needs_approval, assigned_to, post_type }) => {
 
     return (
         <Card mode="outlined"
@@ -13,17 +14,13 @@ const PendingPostCard = ({ name, department, post_time, time_sent_at, due_date, 
                 <View style={styles.content}>
                     <View style={styles.textContainer}>
                         <Text style={styles.titleStyle} variant="titleLarge">{name}</Text>
+                        <Text variant="bodyLarge">Requested by {department}</Text>
                         <Text variant="bodyLarge">{
                             post_time ? 
                             `Scheduled for ${formatDate(post_time)}`
                             : `Due for ${formatDate(due_date)}`
                         }</Text>
                         <Text variant="bodyLarge">{approved ? "Approved" : "Pending approval"}</Text>
-                        <Text style={styles.mutedText} variant="bodyLarge">{
-                        assigned_to ? 
-                        `Assigned to ${assigned_to}` 
-                        : `Not assigned to anyone` 
-                        }</Text>
                     </View>
                     <PostTypeIcon post_type={post_type} />
                 </View>
@@ -65,4 +62,4 @@ const styles = StyleSheet.create({
     },
 })
 
-export default PendingPostCard;
+export default AssignedPostCard;

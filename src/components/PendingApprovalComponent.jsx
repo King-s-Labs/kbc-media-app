@@ -4,11 +4,11 @@ import { Text } from 'react-native-paper';
 import PendingPostCard from './PendingPostCard';
 
 
-const PendingApprovalComponent = ({ props }) => {
+const PendingApprovalComponent = ({ posts }) => {
     return (
         <View>
-            <Text style={styles.textStyle} variant="titleLarge">Pending approvals ({props.length})</Text>
-            {props.map((post, index) => (
+            <Text style={styles.textStyle} variant="titleLarge">Pending approvals ({posts.length})</Text>
+            {posts.map((post, index) => (
                 <PendingPostCard key={index} {...post} />
             ))}
         </View>

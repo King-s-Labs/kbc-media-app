@@ -1,27 +1,17 @@
 import * as React from 'react';
-import { StyleSheet, View } from 'react-native';
-import { Text } from 'react-native-paper';
+
 import PendingPostCard from './PendingPostCard';
+import BaseRequestComponent from './BaseRequestComponent';
 
 
 const PendingApprovalComponent = ({ posts }) => {
     return (
-        <View>
-            <Text style={styles.textStyle} variant="titleLarge">Pending approvals ({posts.length})</Text>
-            {posts.map((post, index) => (
-                <PendingPostCard key={index} {...post} />
-            ))}
-        </View>
+        <BaseRequestComponent
+            posts={posts}
+            CardComponent={PendingPostCard}
+            title="Pending approvals"
+        />
     )
 };
-
-const styles = StyleSheet.create({
-    textStyle: {
-        fontWeight: "bold",
-        fontSize: 30,
-        margin: 20,
-    },
-
-})
 
 export default PendingApprovalComponent;

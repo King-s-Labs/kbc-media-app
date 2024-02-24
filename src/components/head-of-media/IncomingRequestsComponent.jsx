@@ -1,14 +1,14 @@
 import * as React from 'react';
 
 import IncomingRequestCard from './IncomingRequestCard';
-import BaseRequestComponent from '../BaseRequestComponent';
+import BaseRequestComponent from '../base-components/BaseRequestComponent';
 
 
 const IncomingRequestsComponent = ({ posts }) => {
     return (
         <BaseRequestComponent
             posts={posts}
-            CardComponent={IncomingRequestCard}
+            Card={IncomingRequestCard}
             title="Incoming requests"
         />
     )

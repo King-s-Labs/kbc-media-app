@@ -1,4 +1,4 @@
-import PendingApprovalComponent from "../PendingApprovalComponent";
+import PendingApprovalComponent from "../pending-approval-components/PendingApprovalComponent";
 import IncomingRequestsComponent from "./IncomingRequestsComponent";
 
 

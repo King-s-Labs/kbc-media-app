@@ -5,6 +5,7 @@ import DepartmentHeadComponent from '../components/department-head/DepartmentHea
 import HeadOfMediaComponent from '../components/head-of-media/HeadOfMediaComponent';
 import MediaAssociateComponent from '../components/media-associate/MediaAssociateComponent';
 
+
 const posts = [
     {
         "name": "Consulting Week Ad",

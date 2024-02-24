@@ -1,14 +1,14 @@
 import * as React from 'react';
 
 import CurrentPostRequestCard from './CurrentPostRequestCard';
-import BaseRequestComponent from '../BaseRequestComponent';
+import BaseRequestComponent from '../base-components/BaseRequestComponent';
 
 
 const RequestsInProgressComponent = ({ posts }) => {
     return (
-        <BaseRequestComponent 
+        <BaseRequestComponent
             posts={posts}
-            CardComponent={CurrentPostRequestCard}
+            Card={CurrentPostRequestCard}
             title="Requests in progress"
         />
     )

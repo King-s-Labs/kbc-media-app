@@ -1,5 +1,5 @@
 import * as React from 'react';
-import PendingApprovalComponent from '../PendingApprovalComponent';
+import PendingApprovalComponent from '../pending-approval-components/PendingApprovalComponent';
 import AssignedPostsComponent from './AssignedPostsComponent';
 
 const MediaAssociateComponent = ({ posts }) => {

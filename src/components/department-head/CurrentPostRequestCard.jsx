@@ -1,20 +1,13 @@
 import * as React from 'react';
 
-import BaseCard from '../BaseRequestCard';
+import BaseCard from '../base-components/BaseRequestCard';
 
 
-const CurrentPostRequestCard = ({ name, department, post_time, time_sent_at, due_date, approved, needs_approval, assigned_to, post_type }) => {
+const CurrentPostRequestCard = ({ post }) => {
 
     return (
         <BaseCard
-            name={name}
-            department={department}
-            post_time={post_time}
-            time_sent_at={time_sent_at}
-            due_date={due_date}
-            approved={approved}
-            assigned_to={assigned_to}
-            post_type={post_type}
+            post={post}
             showDepartment={false}
             showReceivedTime={true}
             showPostTime={true}

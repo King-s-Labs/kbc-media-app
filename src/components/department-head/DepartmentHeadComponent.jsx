@@ -1,6 +1,6 @@
 import CreatePostRequestButton from "./buttons/CreatePostRequestButton";
 import CopyPostRequestButton from "./buttons/CopyPostRequestButton";
-import PendingApprovalComponent from "../PendingApprovalComponent";
+import PendingApprovalComponent from "../pending-approval-components/PendingApprovalComponent";
 import RequestsInProgressComponent from "./RequestsInProgressComponent";
 
 

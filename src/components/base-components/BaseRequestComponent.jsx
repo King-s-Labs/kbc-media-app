@@ -2,6 +2,14 @@ import * as React from 'react';
 import { StyleSheet, View } from 'react-native';
 import { Text } from 'react-native-paper';
 
+/**
+ * Renders a base request component with customisable card type and title.
+ * 
+ * @param {object[]} posts - An array of post objects to render in the component.
+ * @param {React.ComponentType} Card - The type of card component to use for rendering each post.
+ * @param {string} title - The title to display above the list of posts.
+ * @returns {JSX.Element} The rendered base request component.
+ */
 
 const BaseRequestComponent = ({ posts, Card, title }) => {
     return (

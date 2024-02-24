@@ -1,7 +1,12 @@
 import React from 'react';
 import { ScrollView, StyleSheet } from 'react-native';
 
-
+/**
+ * Styled scrollable screen.
+ * 
+ * @param {*} children 
+ * @returns 
+ */
 const ScrollableScreen = ({ children }) => (
   <ScrollView contentContainerStyle={styles.container}>
     {children}

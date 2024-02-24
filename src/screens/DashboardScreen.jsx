@@ -60,6 +60,9 @@ const isHeadOfMedia = false;
 
 const associateName = "associate1"
 
+/**
+ * Dashboard screen for the app.
+ */
 export default function DashboardScreen() {
     return (
         <ScrollableScreen>

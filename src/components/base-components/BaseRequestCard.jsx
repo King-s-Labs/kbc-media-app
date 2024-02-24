@@ -8,6 +8,16 @@ import PostTypeIcon from '../icons/PostTypeIcon';
 
 import CardStyles from '../../styles/CardStyles';
 
+/**
+* Renders a base request card with customisable display options.
+* 
+* @param {object} post - The post object containing information about the request.
+* @param {boolean} showDepartment - Whether to display the department information.
+* @param {boolean} showReceivedTime - Whether to display the received time information.
+* @param {boolean} showPostTime - Whether to display the post time information.
+* @param {boolean} showAssignedTo - Whether to display the assigned to information.
+* @returns {JSX.Element} The rendered base request card component.
+*/
 
 const BaseRequestCard = ({
     post,
@@ -16,7 +26,7 @@ const BaseRequestCard = ({
     showPostTime,
     showAssignedTo,
 }) => {
-    
+
     const { name, department, post_time, time_sent_at, due_date, approved, needs_approval, assigned_to, post_type } = post;
 
     return (

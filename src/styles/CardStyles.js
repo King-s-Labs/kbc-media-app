@@ -1,6 +1,8 @@
 import { StyleSheet } from "react-native";
 
-
+/**
+ * Styles for request cards.
+ */
 export default StyleSheet.create({
     outer: {
         marginHorizontal: 20,

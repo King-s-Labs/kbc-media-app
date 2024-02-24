@@ -4,7 +4,9 @@ import { Button } from 'react-native-paper';
 import { COLOURS } from '../../../constants';
 import Icon from 'react-native-vector-icons/Ionicons';
 
-
+/**
+ * Button to copy a previously made post request. 
+ */
 const CopyPostRequestButton = () => (
     <Button mode="contained-tonal"
         style={styles.buttonStyle}

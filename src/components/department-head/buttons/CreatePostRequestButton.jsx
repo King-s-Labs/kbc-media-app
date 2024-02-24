@@ -4,7 +4,9 @@ import { Button } from 'react-native-paper';
 import { COLOURS } from '../../../constants';
 import Icon from 'react-native-vector-icons/Ionicons';
 
-
+/**
+ * Button to create a new post request.
+ */
 const CreatePostRequestButton = () => (
     <Button mode="contained-tonal"
         style={styles.buttonStyle}

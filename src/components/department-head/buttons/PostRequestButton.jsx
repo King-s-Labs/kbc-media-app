@@ -5,19 +5,19 @@ import { COLOURS } from '../../../constants';
 import Icon from 'react-native-vector-icons/Ionicons';
 
 /**
- * Button to copy a previously made post request. 
+ * Button to make a post request.
  */
-const CopyPostRequestButton = () => (
+const PostRequestButton = ({ onPress, iconType, buttonText }) => (
     <Button mode="contained-tonal"
         style={styles.buttonStyle}
         labelStyle={styles.labelStyle}
-        onPress={() => console.log('Pressed')}>
+        onPress={onPress}
+        testID="post-request-button">
         <View style={styles.buttonContentStyle}>
-            <Icon name="copy-outline"
+            <Icon name={iconType}
                 size={20}
-                color={COLOURS.SECONDARY_COLOUR} 
-                />
-            <Text>Copy a previous post request</Text>
+                color={COLOURS.SECONDARY_COLOUR} />
+            <Text>{buttonText}</Text>
         </View>
     </Button>
 );
@@ -45,4 +45,4 @@ const styles = StyleSheet.create({
 
 });
 
-export default CopyPostRequestButton;
+export default PostRequestButton;

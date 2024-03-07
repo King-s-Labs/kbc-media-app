@@ -14,7 +14,7 @@ const posts = [
         "time_sent_at": new Date("2024-02-11T17:30:00"),
         "due_date": new Date("2024-03-31T17:30:00"),
         "approved": false,
-        "needs_approval": true,
+        "requested_approval": true,
         "assigned_to": "Associate1",
         "post_type": "instagram"
     },
@@ -25,7 +25,7 @@ const posts = [
         "time_sent_at": new Date("2024-02-11T17:30:00"),
         "due_date": new Date("2024-03-15T17:30:00"),
         "approved": false,
-        "needs_approval": true,
+        "requested_approval": true,
         "assigned_to": null,
         "post_type": "linkedin"
     },
@@ -36,7 +36,7 @@ const posts = [
         "time_sent_at": new Date("2024-02-16T17:30:00"),
         "due_date": new Date("2024-03-15T17:30:00"),
         "approved": false,
-        "needs_approval": false,
+        "requested_approval": false,
         "assigned_to": null,
         "post_type": "instagram"
     },
@@ -47,7 +47,7 @@ const posts = [
         "time_sent_at": new Date("2024-02-14T17:30:00"),
         "due_date": new Date("2024-03-15T17:30:00"),
         "approved": false,
-        "needs_approval": false,
+        "requested_approval": false,
         "assigned_to": null,
         "post_type": "linkedin"
     },

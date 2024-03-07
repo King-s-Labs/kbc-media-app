@@ -11,7 +11,7 @@ const HeadOfMediaComponent = ({ posts }) => {
     return (
         <>
             <PendingApprovalComponent posts={
-                posts.filter(post => post.needs_approval)
+                posts.filter(post => post.requested_approval)
             } />
             <IncomingRequestsComponent posts={
                 posts.filter(post => !post.approved)

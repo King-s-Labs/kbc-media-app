@@ -27,7 +27,7 @@ const BaseRequestCard = ({
     showAssignedTo,
 }) => {
 
-    const { name, department, post_time, time_sent_at, due_date, approved, needs_approval, assigned_to, post_type } = post;
+    const { name, department, post_time, time_sent_at, due_date, approved, requested_approval, assigned_to, post_type } = post;
 
     return (
         <Card mode="outlined"
@@ -47,10 +47,16 @@ const BaseRequestCard = ({
                         {showPostTime && <Text variant="bodyLarge">{
                             post_time ?
                                 `Scheduled for ${formatDate(post_time)}`
-                                : `Due for ${formatDate(due_date)}`
+                                : `Not scheduled to be posted yet`
                         }</Text>}
 
-                        <Text variant="bodyLarge">{approved ? "Approved" : "Pending approval"}</Text>
+                        <Text variant="bodyLarge">{
+                            due_date ?
+                                `Due for ${formatDate(due_date)}`
+                                : `No due date set`
+                        }</Text>
+
+                        <Text variant="bodyLarge">{approved ? "Approved" : "Not approved"}</Text>
 
                         {showAssignedTo && <Text style={CardStyles.mutedText} variant="bodyLarge">{
                             assigned_to ?

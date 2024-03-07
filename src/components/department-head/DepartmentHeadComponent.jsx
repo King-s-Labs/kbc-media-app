@@ -16,7 +16,7 @@ const DepartmentHeadComponent = ({ posts }) => {
             <CreatePostRequestButton />
             <CopyPostRequestButton />
             <PendingApprovalComponent posts={
-                posts.filter(post => post.needs_approval)
+                posts.filter(post => post.requested_approval && !post.approved)
             } />
             <RequestsInProgressComponent posts={
                 posts.filter(post => !post.approved)

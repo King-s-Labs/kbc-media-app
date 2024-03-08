@@ -12,13 +12,14 @@ import navbarStyles from '../styles/NavbarStyles';
 import TabBarIcon from './TabBarIcon';
 
 // Screen imports
-import { Dashboard, DraftsPage } from '../screens';
+import { Dashboard, DraftsPage, MainScreen } from '../screens';
 
 const Tab = createBottomTabNavigator();
 
 const screens = [
     { name: 'Dashboard', component: Dashboard, icon: 'home' },
     { name: 'Drafts', component: DraftsPage, icon: 'file' },
+    {name: 'Main', component: MainScreen, icon: 'question' },
 ];
 
 const screenOptions = { 

@@ -4,3 +4,8 @@
 export { default as Dashboard } from './Dashboard/Dashboard';
 export { default as DraftsPage } from './DraftsPage/DraftsPage';
 export { default as Settings } from './Settings/Settings';
+export { default as LoginScreen } from './LoginScreen/LoginScreen';
+export { default as RegisterScreen } from './RegisterScreen/RegisterScreen';
+export { default as MainScreen } from './MainScreen/MainScreen';
+
+export { default as LoginRegisterStyleCheck } from './LoginRegisterStyleCheck/LoginRegisterStyleCheck';

@@ -15,14 +15,23 @@ const BaseRequestComponent = ({ posts, Card, title }) => {
     return (
         <View>
             <Text style={styles.textStyle} variant="titleLarge">{title} ({posts.length})</Text>
-            {posts.map((post, index) => (
-                <Card key={index} post={post} />
-            ))}
+            <View style={styles.container}>
+                {posts.map((post, index) => (
+                    <Card key={index} post={post} />
+                ))}
+            </View>
         </View>
     )
 };
 
 const styles = StyleSheet.create({
+    container: {
+        margin: 20,
+        marginTop: 0,
+        flexDirection: 'column',
+        justifyContent: 'space-between',
+        gap: 10,
+    },
     textStyle: {
         fontWeight: "bold",
         fontSize: 30,

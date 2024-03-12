@@ -1,11 +1,10 @@
-import { View } from 'react-native';
+import { ScrollView } from 'react-native';
 import AppBar from '../components/AppBar';
-import ScrollableScreen from '../components/ScrollableScreen';
 import DepartmentHeadComponent from '../components/department-head/DepartmentHeadComponent';
 import HeadOfMediaComponent from '../components/head-of-media/HeadOfMediaComponent';
 import MediaAssociateComponent from '../components/media-associate/MediaAssociateComponent';
 
-
+// Mock data
 const posts = [
     {
         "name": "Consulting Week Ad",
@@ -53,10 +52,11 @@ const posts = [
     },
 ]
 
-const isDepartmentHead = false;
-const department = "talent";
+// Flags for mock screens
+const isDepartmentHead = true;
+const department = "consulting";
 
-const isHeadOfMedia = false;
+const isHeadOfMedia = true;
 
 const associateName = "associate1"
 
@@ -65,20 +65,18 @@ const associateName = "associate1"
  */
 export default function DashboardScreen() {
     return (
-        <ScrollableScreen>
-            <View>
-                <AppBar title="Dashboard" />
-                {isDepartmentHead ?
-                    <DepartmentHeadComponent posts={
-                        posts.filter(post => post.department.toLowerCase() === department)
+        <ScrollView>
+            <AppBar title="Dashboard" />
+            {isDepartmentHead ?
+                <DepartmentHeadComponent posts={
+                    posts.filter(post => post.department.toLowerCase() === department)
+                } />
+                : isHeadOfMedia ?
+                    <HeadOfMediaComponent posts={posts} />
+                    : <MediaAssociateComponent posts={
+                        posts.filter(post => post.assigned_to && post.assigned_to.toLowerCase() === associateName)
                     } />
-                    : isHeadOfMedia ?
-                        <HeadOfMediaComponent posts={posts} />
-                        : <MediaAssociateComponent posts={
-                            posts.filter(post => post.assigned_to && post.assigned_to.toLowerCase() === associateName)
-                        } />
-                }
-            </View>
-        </ScrollableScreen>
+            }
+        </ScrollView>
     );
 }

@@ -6,7 +6,7 @@ import { Card, Text } from 'react-native-paper';
 import formatDate from '../../utils/formatDate';;
 import PostTypeIcon from '../icons/PostTypeIcon';
 
-import CardStyles from '../../styles/CardStyles';
+import CardStyles from '../../styles/PostCardStyles';
 
 /**
 * Renders a base request card with customisable display options.

@@ -1,12 +1,16 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { 
+  StyleSheet, 
+  SafeAreaView } from 'react-native';
+import { ScrollView } from 'react-native-virtualized-view';
+import RequestPost from './RequestPost/RequestPost';
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <SafeAreaView style={styles.container}>
+      <ScrollView style={styles.scrollView}>
+        <RequestPost />
+      </ScrollView>
+    </SafeAreaView>
   );
 }
 
@@ -14,7 +18,9 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#fff',
-    alignItems: 'center',
     justifyContent: 'center',
   },
+  scrollView: {
+    paddingTop:'2%',
+  }
 });

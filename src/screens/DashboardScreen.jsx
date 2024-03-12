@@ -53,10 +53,10 @@ const posts = [
 ]
 
 // Flags for mock screens
-const isDepartmentHead = true;
+const isDepartmentHead = false;
 const department = "consulting";
 
-const isHeadOfMedia = true;
+const isHeadOfMedia = false;
 
 const associateName = "associate1"
 

@@ -13,7 +13,7 @@ import { Text } from 'react-native-paper';
 
 const BaseRequestComponent = ({ posts, Card, title }) => {
     return (
-        <View>
+        <View style={styles.outer}>
             <Text style={styles.textStyle} variant="titleLarge">{title} ({posts.length})</Text>
             <View style={styles.container}>
                 {posts.map((post, index) => (
@@ -25,6 +25,9 @@ const BaseRequestComponent = ({ posts, Card, title }) => {
 };
 
 const styles = StyleSheet.create({
+    outer: {
+        margin: 10,
+    },
     container: {
         margin: 20,
         marginTop: 0,

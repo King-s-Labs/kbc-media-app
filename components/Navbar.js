@@ -19,7 +19,7 @@ const Tab = createBottomTabNavigator();
 const screens = [
     { name: 'Dashboard', component: Dashboard, icon: 'home' },
     { name: 'Drafts', component: DraftsPage, icon: 'file' },
-    {name: 'Main', component: MainScreen, icon: 'question' },
+    // {name: 'Main', component: MainScreen, icon: 'question' },
 ];
 
 const screenOptions = { 

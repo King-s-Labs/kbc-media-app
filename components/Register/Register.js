@@ -4,8 +4,7 @@ import {
 } from 'react-native';
 import axios from 'axios';
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import { LocalIP } from '../IPIndex';
-import { useUser } from '../../contexts/UserContext';
+import { LocalIP } from '../../screens/IPIndex';
 
 const styles = StyleSheet.create({
 	container: {
@@ -22,13 +21,14 @@ const styles = StyleSheet.create({
 	},
 });
 
-function Login({ navigation }) {
+function Register({ navigation }) {
 	const [username, setUsername] = useState('');
+	const [email, setEmail] = useState('');
 	const [password, setPassword] = useState('');
-	const { updateUserDetails } = useUser();
+	const [confirmPassword, setConfirmPassword] = useState('');
 
-	// TO DO: Add handleLogin function here
-
+	// TO DO: Add handleRegister function here
+	
 	return (
 		<View style={styles.container}>
 			<TextInput
@@ -39,15 +39,28 @@ function Login({ navigation }) {
 			/>
 			<TextInput
 				style={styles.input}
+				placeholder="Email" // Add this TextInput
+				value={email}
+				onChangeText={setEmail}
+			/>
+			<TextInput
+				style={styles.input}
 				placeholder="Password"
 				value={password}
 				onChangeText={setPassword}
 				secureTextEntry
 			/>
-			<Button title="Login"/>
-			{/* onPress={handleLogin}  */}
+			<TextInput
+				style={styles.input}
+				placeholder="Confirm Password"
+				value={confirmPassword}
+				onChangeText={setConfirmPassword}
+				secureTextEntry
+			/>
+			<Button title="Register"/> 
+			{/* onPress={handleRegister}  */}
 		</View>
 	);
 }
 
-export default Login;
+export default Register;

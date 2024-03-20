@@ -1,8 +1,8 @@
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import DashboardScreen from './src/screens/DashboardScreen';
-import Navbar from './components/Navbar';
-import Settings from './screens/Settings/Settings';
+import DashboardScreen from './src/screens/Dashboard/DashboardScreen';
+import Navbar from './src/components/Navbar';
+import Settings from './src/screens/Settings/Settings';
 import { COLOURS } from './src/constants';
 
 
@@ -21,25 +21,25 @@ export default function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator screenOptions={{
-                        contentStyle: {
-                          backgroundColor: COLOURS.BACKGROUND_COLOUR,
-                        }
-                      }} initialRouteName="Dashboard">
+        contentStyle: {
+          backgroundColor: COLOURS.BACKGROUND_COLOUR,
+        }
+      }} initialRouteName="Navbar">
         <Stack.Screen
           name="Dashboard"
           component={DashboardScreen}
-          options={{headerShown: false,}}
-          />
-          <Stack.Screen 
-          name="Navbar" 
-          component={Navbar} 
-          options={{ 
+          options={{ headerShown: false, }}
+        />
+        <Stack.Screen
+          name="Navbar"
+          component={Navbar}
+          options={{
             headerShown: false
           }}
         />
-        <Stack.Screen 
-          name="Settings" 
-          component={Settings} 
+        <Stack.Screen
+          name="Settings"
+          component={Settings}
           options={{
             headerShown: false,
           }}

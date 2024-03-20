@@ -12,17 +12,18 @@ import navbarStyles from '../styles/NavbarStyles';
 import TabBarIcon from './TabBarIcon';
 
 // Screen imports
-import { Dashboard, DraftsPage, MainScreen } from '../screens';
+import { DraftsPage, MainScreen } from '../screens';
+import DashboardScreen from '../screens/Dashboard/DashboardScreen';
 
 const Tab = createBottomTabNavigator();
 
 const screens = [
-    { name: 'Dashboard', component: Dashboard, icon: 'home' },
+    { name: 'Dashboard', component: DashboardScreen, icon: 'home' },
     { name: 'Drafts', component: DraftsPage, icon: 'file' },
     // {name: 'Main', component: MainScreen, icon: 'question' },
 ];
 
-const screenOptions = { 
+const screenOptions = {
     headerShown: false,
     tabBarStyle: navbarStyles.tabBarStyle,
     tabBarInactiveTintColor: 'gray',
@@ -32,26 +33,26 @@ const screenOptions = {
 export default function MainTabNavigator() {
     return (
         <View style={navbarStyles.container}>
-            <Tab.Navigator 
+            <Tab.Navigator
                 initialRouteName="Dashboard"
                 screenOptions={screenOptions}
             >
-            {screens.map(({ name, component, icon }) => (
-                <Tab.Screen 
-                    key={name}
-                    name={name} 
-                    component={component} 
-                    options={{
-                        tabBarIcon: ({ color, size }) => (
-                            <TabBarIcon 
-                                name={icon} 
-                                color={color} 
-                                size={size}
-                            />
-                        ),
-                    }}
-                />
-            ))}
+                {screens.map(({ name, component, icon }) => (
+                    <Tab.Screen
+                        key={name}
+                        name={name}
+                        component={component}
+                        options={{
+                            tabBarIcon: ({ color, size }) => (
+                                <TabBarIcon
+                                    name={icon}
+                                    color={color}
+                                    size={size}
+                                />
+                            ),
+                        }}
+                    />
+                ))}
             </Tab.Navigator>
         </View>
     );

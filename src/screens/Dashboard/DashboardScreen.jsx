@@ -1,8 +1,9 @@
 import { ScrollView } from 'react-native';
-import AppBar from '../../components/AppBar';
-import DepartmentHeadComponent from '../../components/department-head/DepartmentHeadComponent';
-import HeadOfMediaComponent from '../../src/components/head-of-media/HeadOfMediaComponent';
-import MediaAssociateComponent from '../../src/components/media-associate/MediaAssociateComponent';
+// import AppBar from '../../components/AppBar';
+// import DepartmentHeadComponent from '../../components/department-head/DepartmentHeadComponent';
+// import HeadOfMediaComponent from '../../components/head-of-media/HeadOfMediaComponent';
+// import MediaAssociateComponent from '../../components/media-associate/MediaAssociateComponent';
+import { AppBar, DepartmentHeadComponent, HeadOfMediaComponent, MediaAssociateComponent } from '../../components';
 
 // Mock data
 const posts = [

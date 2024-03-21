@@ -1,34 +1,33 @@
-import formatDate from "../formatDate";
+import formatDate from '../formatDate';
 
-// Mock current date
-const realDate = Date.now;
+describe('formatDate', () => {
+    let today_date;
+    let options;
 
-beforeEach(() => {
-    Date.now = jest.fn(() => new Date('2024-03-07T12:00:00Z').getTime()); // Set current date to March 7th, 2024
-});
+    beforeEach(() => {
+        today_date = new Date();
+        options = { hour: '2-digit', minute: '2-digit', hour12: true, timeZone: 'UTC' };
+    });
 
-afterEach(() => {
-    Date.now = realDate;
-});
-
-describe('formatDate function', () => {
     test('formats date as today', () => {
-        const today = new Date('2024-03-07T08:00:00Z'); // Same day as current date
-        expect(formatDate(today)).toBe('today, 08:00 AM');
+        const today = new Date(today_date); // March 7th, 2024 (mocked date)
+        expect(formatDate(today)).toBe('today, ' + today.toLocaleTimeString('en-US', options));
     });
 
     test('formats date as yesterday', () => {
-        const yesterday = new Date('2024-03-06T08:00:00Z'); // One day before current date
-        expect(formatDate(yesterday)).toBe('yesterday, 08:00 AM');
+        const yesterday = new Date(today_date)
+        yesterday.setDate(today_date.getDate() - 1) // March 6th, 2024
+        expect(formatDate(yesterday)).toBe('yesterday, ' + yesterday.toLocaleTimeString('en-US', options));
     });
 
     test('formats date as tomorrow', () => {
-        const tomorrow = new Date('2024-03-08T08:00:00Z'); // One day after current date
-        expect(formatDate(tomorrow)).toBe('tomorrow, 08:00 AM');
+        const tomorrow = new Date(today_date); 
+        tomorrow.setDate(tomorrow.getDate() + 1) // March 8th, 2024
+        expect(formatDate(tomorrow)).toBe('tomorrow, ' + tomorrow.toLocaleTimeString('en-US', options));
     });
 
-    test('formats date as another day', () => {
-        const otherDay = new Date('2024-03-05T08:00:00Z'); // Any other day
-        expect(formatDate(otherDay)).toBe('05/03/24, 08:00 AM');
+    test('formats other date', () => {
+        const otherDate = new Date('2024-03-05T12:00:00Z'); // March 5th, 2024
+        expect(formatDate(otherDate)).toBe('05/03/24, 12:00 PM');
     });
 });

@@ -1,13 +1,12 @@
-import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
-import { createStackNavigator } from '@react-navigation/stack';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import DashboardScreen from './src/screens/Dashboard/DashboardScreen';
+import Navbar from './src/components/Navbar';
+import Settings from './src/screens/Settings/Settings';
+import { COLOURS } from './src/constants';
 
-import Navbar from './components/Navbar';
-import Settings from './screens/Settings/Settings';
 
-
-
-const Stack = createStackNavigator();
+const Stack = createNativeStackNavigator();
 
 /**
  * App is the root component of the application.
@@ -19,23 +18,29 @@ const Stack = createStackNavigator();
  * @returns {React.Element} The rendered navigation container.
  */
 export default function App() {
-
   return (
     <NavigationContainer>
-      <Stack.Navigator 
-        initialRouteName="Navbar"
-      >
-        <Stack.Screen 
-          name="Navbar" 
-          component={Navbar} 
-          options={{ 
+      <Stack.Navigator screenOptions={{
+        contentStyle: {
+          backgroundColor: COLOURS.BACKGROUND_COLOUR,
+        }
+      }} initialRouteName="Navbar">
+        <Stack.Screen
+          name="Dashboard"
+          component={DashboardScreen}
+          options={{ headerShown: false, }}
+        />
+        <Stack.Screen
+          name="Navbar"
+          component={Navbar}
+          options={{
             headerShown: false
           }}
         />
-        <Stack.Screen 
-          name="Settings" 
-          component={Settings} 
-          options={{ 
+        <Stack.Screen
+          name="Settings"
+          component={Settings}
+          options={{
             headerShown: false,
           }}
         />

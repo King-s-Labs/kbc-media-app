@@ -9,7 +9,7 @@ export default function DraftsButton() {
     const navigation = useNavigation();
 
     return (
-        <TouchableOpacity 
+        <TouchableOpacity
             style={styles.button}
             onPress={() => navigation.navigate('Drafts')}
         >
